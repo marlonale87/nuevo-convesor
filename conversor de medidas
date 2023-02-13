@@ -1,0 +1,57 @@
+class ConversorActivity : Activity(), View.OnClickListener {
+    val conversor = Conversor()
+
+    // fun define un método o function, equivalente a def de Xtend
+    // los parámetros opcionales se terminan con un ?
+    override fun onCreate(savedInstanceState: Bundle) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_conversor)
+        conversor_convertir.setOnClickListener(this)
+
+xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/conversor_millas_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/millas"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/conversor_millas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/millas"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/conversor_convertir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="convertir"
+        android:padding="10dp"
+        android:text="@string/convertir" />
+
+    <TextView
+        android:id="@+id/conversor_kilometros_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/kilometros"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/conversor_kilometros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textColor="#0B173B"
+        android:hint="@string/kilometros" />
+conversor_kilometros.text = conversor.kilometrosAsString()
+    } catch (e: NumberFormatException) {
+        Toast.makeText(this.getApplicationContext(), "Debe ingresar un valor numérico", Toast.LENGTH_LONG).show()
+        Moneda
